@@ -1,0 +1,29 @@
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><i class="fa fa-hashtag"></i></th>
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Units in Stock</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let tempProduct of products; let idx = index">
+      <td class="align-middle">
+        <strong>{{ idx + 1 }}</strong>
+      </td>
+      <td class="align-middle">
+        <img
+          [src]="tempProduct.imageUrl"
+          class="product-img"
+          alt=""
+        >
+      </td>
+      <td class="align-middle">{{ tempProduct.name }}</td>
+      <td class="align-middle">{{ tempProduct.unitPrice | currency:'USD' }}</td>
+      <td class="align-middle">{{ tempProduct.unitsInstack }}</td>
+    </tr>
+  </tbody>
+</table>
